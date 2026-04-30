@@ -27,7 +27,7 @@ export default function ResultsPage() {
   if (!result) {
     return (
       <div className="min-h-screen bg-muted/30 flex items-center justify-center">
-        <div className="animate-pulse text-primary font-medium">Memuat Hasil...</div>
+        <div className="animate-pulse text-primary font-medium">Loading Results...</div>
       </div>
     );
   }
@@ -38,9 +38,9 @@ export default function ResultsPage() {
         <header className="flex flex-col md:flex-row justify-between items-start md:items-center gap-4 mb-6 md:mb-10">
           <div>
             <Link href="/analyze" className="inline-flex items-center text-muted-foreground hover:text-primary transition-colors mb-2">
-              <ArrowLeft size={16} className="mr-2" /> Kembali ke Upload CV
+              <ArrowLeft size={16} className="mr-2" /> Back to Upload CV
             </Link>
-            <h1 className="text-2xl md:text-3xl font-bold tracking-tight text-primary">Hasil Analisis CV</h1>
+            <h1 className="text-2xl md:text-3xl font-bold tracking-tight text-primary">CV Analysis Results</h1>
             <p className="text-sm md:text-base text-muted-foreground">Target: {result.targetRole} ({result.seniority})</p>
           </div>
           <Button 
@@ -50,7 +50,7 @@ export default function ResultsPage() {
               router.push("/analyze"); 
             }}
           >
-            Analisis CV Baru
+            New CV Analysis
           </Button>
         </header>
 
@@ -65,7 +65,7 @@ export default function ResultsPage() {
       
       <LensyAssistant 
         state="celebrating" 
-        message="Yay! Analisis selesai! 🎉 Yuk lihat insight menarik dari resume kamu." 
+        message="Yay! Analysis complete! 🎉 Let's check out the insights from your resume." 
         position="fixed" 
         className="bottom-4 right-4 md:bottom-8 md:right-8 z-50"
       />

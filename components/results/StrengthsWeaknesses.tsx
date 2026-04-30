@@ -9,7 +9,7 @@ export function StrengthsWeaknesses({ strengths, weaknesses }: { strengths: stri
     <motion.div initial={{ opacity: 0, x: 20 }} animate={{ opacity: 1, x: 0 }} transition={{ delay: 0.4 }} className="space-y-6">
       <Card className="bg-gradient-to-br from-primary to-blue-700 text-primary-foreground border-none shadow-lg">
         <CardHeader>
-          <CardTitle className="text-xl font-bold flex items-center gap-2 text-white"><CheckCircle /> Kekuatan CV Anda</CardTitle>
+          <CardTitle className="text-xl font-bold flex items-center gap-2 text-white"><CheckCircle /> Core Strengths</CardTitle>
         </CardHeader>
         <CardContent>
           <ul className="space-y-3">
@@ -25,7 +25,7 @@ export function StrengthsWeaknesses({ strengths, weaknesses }: { strengths: stri
 
       <Card className="border-destructive/20 shadow-sm">
         <CardHeader>
-          <CardTitle className="text-xl font-bold flex items-center gap-2 text-destructive"><AlertCircle /> Area Perbaikan</CardTitle>
+          <CardTitle className="text-xl font-bold flex items-center gap-2 text-destructive"><AlertCircle /> Areas for Improvement</CardTitle>
         </CardHeader>
         <CardContent>
           <ul className="space-y-3">

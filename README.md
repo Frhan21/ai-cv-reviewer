@@ -14,29 +14,29 @@
 </p>
 
 <p align="center">
-  <em>Sistem cerdas evaluasi CV layaknya rekruter profesional dengan skor ATS, pemetaan keahlian, dan saran perbaikan instan.</em>
+  <em>An intelligent system that evaluates your CV like a professional recruiter, providing ATS scores, skill mapping, and instant actionable feedback.</em>
 </p>
 
 ---
 
-## 🌟 Fitur Utama
+## 🌟 Key Features
 
-1. **Analisis Berbasis AI (Llama-3 / Groq)**
-   Mengekstrak teks PDF secara lokal lalu mengirimkannya ke model *Large Language Model* super cepat untuk dievaluasi.
-2. **Skor Keseluruhan & Skor ATS**
-   Dapatkan representasi angka seberapa baik CV Anda dan seberapa mudah dibaca oleh robot seleksi otomatis (ATS).
-3. **Kritik Per Bagian (Section Feedback)**
-   Menilai bagian-bagian penting (Ringkasan, Pengalaman, Pendidikan, Keahlian, dll) dan langsung memberikan *insight* perbaikan.
-4. **Kelebihan & Kekurangan (Strengths & Weaknesses)**
-   Menyoroti secara objektif apa yang sudah bagus dan apa yang masih kurang dari profil kandidat berdasarkan target peran (*Target Role*).
-5. **AI Assistant Interaktif (Lensy)**
-   Karakter animasi yang menemani pengguna di setiap tahapan, mulai dari *idle*, *loading/thinking*, hingga merayakan hasil (*celebrating*).
-6. **Animasi Halus & Responsif**
-   Antarmuka kelas premium dengan *glassmorphism* dan transisi `framer-motion`, serta mendukung penuh resolusi *mobile*.
+1. **AI-Powered Analysis (Llama-3 / Groq)**
+   Extracts text locally from your PDF and sends it to a lightning-fast Large Language Model for evaluation.
+2. **Overall & ATS Scores**
+   Get a numerical representation of how good your CV is and how easily it can be parsed by automated tracking systems (ATS).
+3. **Section-by-Section Critique**
+   Assesses critical sections (Summary, Experience, Education, Skills, etc.) and provides instant improvement suggestions.
+4. **Strengths & Weaknesses**
+   Objectively highlights what you've done well and what you're missing based on your target role.
+5. **Interactive AI Assistant (Lensy)**
+   An animated character that accompanies you through every step, from *idle*, to *thinking*, to *celebrating* your results.
+6. **Smooth & Responsive Animations**
+   A premium-class interface featuring glassmorphism, `framer-motion` transitions, and full mobile responsiveness.
 
 ---
 
-## 🛠️ Teknologi yang Digunakan
+## 🛠️ Technologies Used
 
 <div align="center">
   <a href="https://skillicons.dev">
@@ -51,80 +51,80 @@
 - **Animation**: [Framer Motion](https://www.framer.com/motion/)
 - **API & Data Fetching**: Axios
 - **AI Processing**: `@langchain/groq` & Llama 3
-- **Validasi Data AI**: Zod (Structured Output)
+- **Structured Data Validation**: Zod
 - **PDF Extraction**: `pdf-parse`
 
 ---
 
-## ⚙️ Prasyarat (Requirements)
+## ⚙️ Requirements
 
-Sebelum memulai, pastikan Anda telah memiliki hal-hal berikut:
-1. **Node.js** (v18 atau lebih baru)
-2. **NPM**, **Yarn**, atau **pnpm**
-3. Kunci API Groq (**Groq API Key**). Dapatkan di [Groq Console](https://console.groq.com/).
+Before starting, ensure you have the following:
+1. **Node.js** (v18 or newer)
+2. **NPM**, **Yarn**, or **pnpm**
+3. A Groq API Key. Get yours at the [Groq Console](https://console.groq.com/).
 
 ---
 
-## 🚀 Cara Instalasi & Menjalankan (Local Setup)
+## 🚀 Local Setup & Installation
 
-1. **Kloning Repositori**
+1. **Clone the Repository**
    ```bash
    git clone https://github.com/username/ai-cv-reviewer.git
    cd ai-cv-reviewer
    ```
 
-2. **Instal Dependensi**
+2. **Install Dependencies**
    ```bash
    npm install
-   # atau
+   # or
    yarn install
    ```
 
-3. **Konfigurasi Environment Variables**
-   Buat sebuah file bernama `.env` (atau `.env.local`) di direktori utama (*root*) proyek, lalu tambahkan API Key Anda:
+3. **Configure Environment Variables**
+   Create a `.env` (or `.env.local`) file in the root directory and add your API Key:
    ```env
    GROQ_API_KEY=your_groq_api_key_here
    ```
 
-4. **Jalankan Server Pengembangan (Dev Server)**
+4. **Run the Development Server**
    ```bash
    npm run dev
-   # atau
+   # or
    yarn dev
    ```
 
-5. Buka [http://localhost:3000](http://localhost:3000) di browser Anda untuk melihat hasilnya.
+5. Open [http://localhost:3000](http://localhost:3000) in your browser to see the app.
 
 ---
 
-## 📖 Cara Penggunaan Sistem
+## 📖 How to Use
 
-1. **Halaman Utama (Landing Page)**:
-   Saat pertama kali masuk, Anda akan disambut oleh halaman depan interaktif dan AI Assistant **Lensy** di sudut kanan bawah. Klik tombol **Coba Sekarang** atau **Upload CV Anda**.
+1. **Landing Page**:
+   You'll be greeted by an interactive homepage and **Lensy**, your AI Assistant, in the bottom right corner. Click **Try Now** or **Upload Your CV**.
 
-2. **Halaman Upload & Analisis (`/analyze`)**:
-   - Tarik dan lepas (*drag and drop*) atau klik kotak untuk mengunggah file **CV berformat PDF** (Maks 5MB).
-   - Masukkan **Target Posisi** (Contoh: *Frontend Developer*, *Data Analyst*).
-   - Pilih tingkat **Senioritas** (Contoh: *Junior*, *Mid*, *Senior*).
-   - (Opsional) Tempel *Job Description* spesifik jika Anda ingin AI menyesuaikan analisis terhadap loker tertentu.
-   - Klik **Mulai Analisis CV**. Selama proses berjalan (biasanya ~5-10 detik), Lensy akan menampilkan indikator sedang berpikir (*thinking*).
+2. **Upload & Analyze Page (`/analyze`)**:
+   - Drag and drop or click the box to upload your **PDF CV** (Max 5MB).
+   - Enter your **Target Role** (e.g., *Frontend Developer*, *Data Analyst*).
+   - Select your **Seniority Level** (e.g., *Junior*, *Mid*, *Senior*).
+   - (Optional) Paste a specific *Job Description* for tailored analysis.
+   - Click **Start CV Analysis**. While processing (~5-10 seconds), Lensy will show a *thinking* indicator.
 
-3. **Halaman Dasbor Hasil (`/results`)**:
-   - Setelah selesai, Anda akan dialihkan otomatis ke Dasbor Hasil.
-   - Anda akan melihat visualisasi berupa metrik skor (*CV Score* dan *ATS Score*).
-   - Tinjau **Missing Skills**, **Kekurangan Utama**, serta **Kelebihan** profil Anda.
-   - Baca detail **Section Feedback** untuk memperbaiki kalimat dan kata kunci di resume Anda.
-   - Anda dapat menekan **Analisis CV Baru** untuk mencoba dokumen lain.
+3. **Results Dashboard (`/results`)**:
+   - Once completed, you will be redirected automatically to the Results Dashboard.
+   - View your metrics via the visual *Overall Score* and *ATS Score* cards.
+   - Review **Missing Skills**, **Areas for Improvement**, and **Core Strengths**.
+   - Read the detailed **Section Feedback** to refine phrasing and keywords on your resume.
+   - You can click **New CV Analysis** to try another document.
 
 ---
 
-## 📄 Catatan Pengembangan (Known Limitations)
+## 📄 Known Limitations
 
-- Karena ekstraksi file dilakukan menggunakan pustaka murni JavaScript (`pdf-parse`), struktur PDF multi-kolom yang sangat kompleks atau berupa gambar *scanned image* (bukan teks) mungkin tidak terbaca 100% sempurna. Gunakan PDF dengan format urutan standar ATS.
-- Untuk deployment ke lingkungan serverless (misal: Vercel), fungsi ekstraksi dokumen memakan waktu beberapa detik. Pastikan fungsi server memiliki *timeout* yang cukup (Vercel Hobby plan maksimal 10 detik, direkomendasikan upgrade *timeout* jika diperlukan atau gunakan *streaming/background job* untuk produksi skala besar).
+- Since file extraction uses a pure JavaScript library (`pdf-parse`), highly complex multi-column PDFs or scanned image-based PDFs may not be parsed perfectly. Use standard ATS-friendly PDF layouts.
+- For deployment to serverless environments (e.g., Vercel), document extraction takes a few seconds. Ensure your server functions have an adequate timeout limit (Vercel Hobby plan max is 10 seconds; upgrading timeouts or using background jobs is recommended for production scale).
 
 ---
 
 <div align="center">
-  Dibuat dengan ❤️ untuk membantu para pencari kerja menggapai karier impian. 🌟
+  Built with ❤️ to help job seekers land their dream careers. 🌟
 </div>

@@ -16,7 +16,8 @@ export function AnalyzeForm() {
   const [targetRole, setTargetRole] = useState("");
   const [seniority, setSeniority] = useState("junior");
   const [jobDescription, setJobDescription] = useState("");
-  const [language, setLanguage] = useState("id");
+  // Language is strictly English now
+  const language = "en";
 
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState<string | null>(null);
@@ -28,18 +29,18 @@ export function AnalyzeForm() {
     if (droppedFile && droppedFile.type === "application/pdf") {
       setFile(droppedFile);
     } else {
-      setError("Hanya file PDF yang didukung.");
+      setError("Only PDF files are supported.");
     }
   };
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     if (!file) {
-      setError("Silakan upload CV Anda (PDF).");
+      setError("Please upload your CV (PDF).");
       return;
     }
     if (!targetRole) {
-      setError("Silakan masukkan Target Role.");
+      setError("Please enter a Target Role.");
       return;
     }
 
@@ -65,7 +66,7 @@ export function AnalyzeForm() {
       if (err.response && err.response.data && err.response.data.error) {
         setError(err.response.data.error);
       } else {
-        setError(err.message || "Terjadi kesalahan saat menganalisis CV.");
+        setError(err.message || "An error occurred while analyzing the CV.");
       }
     } finally {
       setIsLoading(false);
@@ -79,23 +80,23 @@ export function AnalyzeForm() {
           {/* Left Col: Info */}
           <div className="md:w-1/3 bg-primary p-8 text-primary-foreground flex flex-col justify-between">
             <div>
-              <h2 className="text-2xl font-bold mb-4">Analisis CV Anda.</h2>
+              <h2 className="text-2xl font-bold mb-4">Analyze Your CV.</h2>
               <p className="text-primary-foreground/80 text-sm leading-relaxed mb-8">
-                Dapatkan wawasan berharga untuk mengoptimalkan CV Anda agar lolos sistem ATS dan dilirik oleh recruiter.
+                Get valuable insights to optimize your CV, pass ATS systems, and catch the recruiter&apos;s eye.
               </p>
 
               <div className="space-y-6 mt-8">
                 <div className="flex items-center gap-4">
                   <div className="w-10 h-10 rounded-full bg-white/20 flex items-center justify-center backdrop-blur-sm"><BarChart3 size={18} /></div>
-                  <div className="text-sm">Skor ATS Akurat</div>
+                  <div className="text-sm">Accurate ATS Score</div>
                 </div>
                 <div className="flex items-center gap-4">
                   <div className="w-10 h-10 rounded-full bg-white/20 flex items-center justify-center backdrop-blur-sm"><FileText size={18} /></div>
-                  <div className="text-sm">Kritik per Bagian</div>
+                  <div className="text-sm">Section-by-Section Critique</div>
                 </div>
                 <div className="flex items-center gap-4">
                   <div className="w-10 h-10 rounded-full bg-white/20 flex items-center justify-center backdrop-blur-sm"><Briefcase size={18} /></div>
-                  <div className="text-sm">Fokus pada Job Role</div>
+                  <div className="text-sm">Target Role Focused</div>
                 </div>
               </div>
             </div>
@@ -132,8 +133,8 @@ export function AnalyzeForm() {
                     ) : (
                       <>
                         <div className="w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center text-primary"><UploadCloud size={24} /></div>
-                        <div className="text-muted-foreground"><span className="font-semibold text-primary">Klik untuk upload</span> atau drag and drop</div>
-                        <div className="text-xs text-muted-foreground">Maksimal 5MB</div>
+                        <div className="text-muted-foreground"><span className="font-semibold text-primary">Click to upload</span> or drag and drop</div>
+                        <div className="text-xs text-muted-foreground">Max size 5MB</div>
                       </>
                     )}
                   </div>
@@ -142,7 +143,7 @@ export function AnalyzeForm() {
 
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                 <div>
-                  <label className="block text-sm font-semibold mb-2">Target Posisi (Role)</label>
+                  <label className="block text-sm font-semibold mb-2">Target Role</label>
                   <Input
                     type="text"
                     value={targetRole}
@@ -153,7 +154,7 @@ export function AnalyzeForm() {
                   />
                 </div>
                 <div>
-                  <label className="block text-sm font-semibold mb-2">Tingkat Senioritas</label>
+                  <label className="block text-sm font-semibold mb-2">Seniority Level</label>
                   <select
                     value={seniority}
                     onChange={(e) => setSeniority(e.target.value)}
@@ -169,29 +170,17 @@ export function AnalyzeForm() {
               </div>
 
               <div>
-                <label className="block text-sm font-semibold mb-2">Deskripsi Pekerjaan (Opsional namun disarankan)</label>
+                <label className="block text-sm font-semibold mb-2">Job Description (Optional but recommended)</label>
                 <Textarea
                   value={jobDescription}
                   onChange={(e) => setJobDescription(e.target.value)}
-                  placeholder="Paste job description di sini untuk hasil yang lebih akurat..."
+                  placeholder="Paste the job description here for more accurate analysis..."
                   rows={4}
                   className="resize-none bg-muted/50"
                 />
               </div>
 
-              <div>
-                <label className="block text-sm font-semibold mb-2">Bahasa Feedback</label>
-                <div className="flex gap-4">
-                  <label className="flex items-center gap-2 cursor-pointer">
-                    <input type="radio" name="lang" checked={language === 'id'} onChange={() => setLanguage('id')} className="text-primary" />
-                    <span className="text-sm">Indonesia</span>
-                  </label>
-                  <label className="flex items-center gap-2 cursor-pointer">
-                    <input type="radio" name="lang" checked={language === 'en'} onChange={() => setLanguage('en')} className="text-primary" />
-                    <span className="text-sm">English</span>
-                  </label>
-                </div>
-              </div>
+
 
               {error && (
                 <motion.div initial={{ opacity: 0, y: -10 }} animate={{ opacity: 1, y: 0 }} className="p-4 bg-destructive/10 text-destructive text-sm rounded-lg flex items-start gap-3 border border-destructive/20">
@@ -206,9 +195,9 @@ export function AnalyzeForm() {
                 className="w-full h-14 text-lg font-bold"
               >
                 {isLoading ? (
-                  <><Loader2 className="animate-spin mr-2" /> Menganalisis CV...</>
+                  <><Loader2 className="animate-spin mr-2" /> Analyzing CV...</>
                 ) : (
-                  "Mulai Analisis CV"
+                  "Start CV Analysis"
                 )}
               </Button>
             </form>
@@ -228,7 +217,7 @@ export function AnalyzeForm() {
             <div className="relative mb-8 flex justify-center">
                <LensyAssistant 
                  state="thinking" 
-                 message="Menganalisis resume kamu... Mohon tunggu sebentar ya! ⏳" 
+                 message="Analyzing your resume... Please wait a moment! ⏳" 
                  position="relative" 
                  className="z-50"
                />
@@ -241,7 +230,7 @@ export function AnalyzeForm() {
       {!isLoading && (
         <LensyAssistant 
           state="idle" 
-          message="Upload resume di sini ya! Aku akan bantu analisis secara mendalam. 🚀" 
+          message="Upload your resume here! I'll help analyze it deeply. 🚀" 
           position="fixed" 
           className="bottom-4 right-4 md:bottom-8 md:right-8 z-50"
         />

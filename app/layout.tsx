@@ -17,7 +17,7 @@ const geistMono = Geist_Mono({
 
 export const metadata: Metadata = {
   title: "HireLens AI - AI Resume Reviewer",
-  description: "Review CV Anda dengan kecerdasan buatan, dapatkan skor ATS, dan feedback instan.",
+  description: "Review your CV with Artificial Intelligence, get ATS scores, and instant actionable feedback.",
   icons: {
     icon: "/logo-removebg-preview.png",
   },

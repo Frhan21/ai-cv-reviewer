@@ -7,11 +7,11 @@ export async function POST(req: NextRequest) {
 
   const file = res.get("file") as File;
   if (!file) {
-    throw new Error("File tidak ada");
+    throw new Error("File is missing");
   }
 
   if (file.type !== "application/pdf") {
-    throw new Error("File harus berupa PDF");
+    throw new Error("File must be a PDF");
   }
 
   try {
@@ -36,6 +36,6 @@ export async function POST(req: NextRequest) {
     if (error instanceof Error) {
       return NextResponse.json({ error: error.message }, { status: 500 });
     }
-    return NextResponse.json({ error: "Gagal memproses CV" }, { status: 500 });
+    return NextResponse.json({ error: "Failed to process CV" }, { status: 500 });
   }
 }

@@ -19,10 +19,10 @@ export default function LandingPage() {
             HireLens AI
           </div>
           <div className="flex items-center gap-4 md:gap-8 text-sm font-medium text-[#434655]">
-            <Link href="#features" className="hidden md:block hover:text-[#0037b0] transition-colors">Fitur</Link>
-            <Link href="#how-it-works" className="hidden md:block hover:text-[#0037b0]">Cara Kerja</Link>
+            <Link href="#features" className="hidden md:block hover:text-[#0037b0] transition-colors">Features</Link>
+            <Link href="#how-it-works" className="hidden md:block hover:text-[#0037b0]">How It Works</Link>
             <Link href="/analyze" className="px-4 py-2 text-xs md:text-sm md:px-5 md:py-2.5 rounded-md bg-[#0037b0] text-white hover:bg-[#1d4ed8] transition-all shadow-lg shadow-[#1d4ed8]/20">
-              Coba Sekarang
+              Try Now
             </Link>
           </div>
         </div>
@@ -42,9 +42,9 @@ export default function LandingPage() {
             transition={{ duration: 0.7 }}
             className="text-5xl md:text-7xl font-bold tracking-tight mb-8"
           >
-            Review CV dengan <br className="hidden md:block" />
+            Get Your CV Reviewed by <br className="hidden md:block" />
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#0037b0] to-[#712ae2]">
-              Kecerdasan Buatan.
+              Artificial Intelligence.
             </span>
           </motion.h1>
 
@@ -54,8 +54,8 @@ export default function LandingPage() {
             transition={{ duration: 0.7, delay: 0.1 }}
             className="text-lg md:text-xl text-[#434655] max-w-2xl mx-auto mb-10 leading-relaxed"
           >
-            Dapatkan feedback jujur, skor ATS, dan pemetaan skill secara instan.
-            Tingkatkan peluang Anda mendapatkan pekerjaan impian.
+            Get instant actionable feedback, ATS scores, and skill mapping.
+            Increase your chances of landing your dream job.
           </motion.p>
 
           <motion.div
@@ -69,7 +69,7 @@ export default function LandingPage() {
               className="group relative inline-flex items-center justify-center gap-2 px-8 py-4 text-base font-semibold text-white bg-[#0037b0] rounded-lg overflow-hidden transition-all hover:scale-105 hover:shadow-xl hover:shadow-[#0037b0]/20"
             >
               <span className="absolute inset-0 w-full h-full -mt-1 rounded-lg opacity-30 bg-gradient-to-b from-transparent via-transparent to-black" />
-              Upload CV Anda <ArrowRight size={18} className="group-hover:translate-x-1 transition-transform" />
+              Upload Your CV <ArrowRight size={18} className="group-hover:translate-x-1 transition-transform" />
             </Link>
           </motion.div>
         </div>
@@ -79,15 +79,15 @@ export default function LandingPage() {
       <section id="features" className="py-20 bg-white">
         <div className="max-w-7xl mx-auto px-6">
           <div className="text-center mb-16">
-            <h2 className="text-3xl font-bold mb-4">Analisis Mendalam</h2>
-            <p className="text-[#434655]">Sistem kami mengevaluasi CV Anda dari berbagai sudut pandang.</p>
+            <h2 className="text-3xl font-bold mb-4">Deep Analysis</h2>
+            <p className="text-[#434655]">Our system evaluates your CV from multiple perspectives.</p>
           </div>
 
           <div className="grid md:grid-cols-3 gap-8">
             {[
-              { title: "ATS Compatibility", icon: ShieldCheck, desc: "Pastikan format dan keyword Anda lolos sistem tracking otomatis." },
-              { title: "Actionable Feedback", icon: Zap, desc: "Saran perbaikan per-section untuk kalimat yang lebih berdampak." },
-              { title: "Skill Mapping", icon: FileSearch, desc: "Mendeteksi skill yang hilang berdasarkan Job Description incaran Anda." }
+              { title: "ATS Compatibility", icon: ShieldCheck, desc: "Ensure your format and keywords pass automated tracking systems." },
+              { title: "Actionable Feedback", icon: Zap, desc: "Section-by-section suggestions for more impactful phrasing." },
+              { title: "Skill Mapping", icon: FileSearch, desc: "Detect missing skills based on your target Job Description." }
             ].map((feature, i) => (
               <motion.div
                 key={i}
@@ -107,7 +107,7 @@ export default function LandingPage() {
 
       <LensyAssistant
         state="idle"
-        message="Hai! Aku Lensy, AI Assistant pribadimu untuk review resume. Yuk mulai analisis CV kamu!"
+        message="Hi! I'm Lensy, your personal AI Resume Assistant. Let's start analyzing your CV!"
         position="fixed"
         className="bottom-4 right-4 md:bottom-8 md:right-8 z-50"
       />

@@ -15,7 +15,7 @@ interface LensyAssistantProps {
 
 export function LensyAssistant({ 
   state = "idle", 
-  message = "Halo! Aku Lensy, AI Assistant pribadimu.",
+  message = "Hello! I'm Lensy, your personal AI Assistant.",
   position = "fixed",
   className = "bottom-8 right-8 z-50"
 }: LensyAssistantProps) {

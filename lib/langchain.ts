@@ -14,7 +14,7 @@ export const cvReviewInputSchema = z.object({
     .trim()
     .min(2)
     .max(50)
-    .default("Bahasa Indonesia")
+    .default("English")
     .optional(),
   seniority: z.string().trim().min(2).max(50).optional(),
 });
@@ -67,7 +67,7 @@ export const cvReviewPrompt = ChatPromptTemplate.fromMessages([
       "You are an expert CV reviewer, recruiter, and ATS evaluator.",
       "Analyze the CV critically and return concise, useful, honest feedback in JSON format.",
       "Focus on clarity, impact, measurable achievements, ATS compatibility, keyword coverage, and section completeness.",
-      "Use the language requested by the user.",
+      "CRITICAL RULE: You MUST output all feedback and responses entirely in English, regardless of the language of the provided CV or inputs.",
       "Do not invent experiences or qualifications that are not present in the CV.",
       "If the CV lacks evidence for a claim, call it out as a weakness or uncertainty.",
     ].join(" "),
