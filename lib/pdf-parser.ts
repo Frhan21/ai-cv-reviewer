@@ -1,8 +1,5 @@
 import { ParsedPdfResult } from '@/types/pdf-parser';
-import { PDFParse } from 'pdf-parse';
-
-const DEFAULT_PAGE_JOINER =
-  '\n\n--- Page {page_number} of {total_number} ---\n\n';
+import { extractText, getDocumentProxy } from 'unpdf';
 
 function normalizeExtractedText(text: string) {
   return text
@@ -15,35 +12,25 @@ function normalizeExtractedText(text: string) {
 export async function extractTextFromPdfBuffer(
   buffer: Buffer | Uint8Array,
 ): Promise<ParsedPdfResult> {
-  const parser = new PDFParse({ data: buffer });
+  const pdf = await getDocumentProxy(new Uint8Array(buffer));
+  const { totalPages, text } = await extractText(pdf, { mergePages: true });
 
-  try {
-    const result = await parser.getText({
-      cellSeparator: ' | ',
-      lineEnforce: true,
-      pageJoiner: DEFAULT_PAGE_JOINER,
-      parseHyperlinks: true,
-    });
+  const normalizedText = normalizeExtractedText(text as string);
 
-    const pages = result.pages.map((page) => ({
-      pageNumber: page.num,
-      text: normalizeExtractedText(page.text),
-    }));
-
-    const text = normalizeExtractedText(result.text);
-
-    if (!text) {
-      throw new Error('PDF text extraction returned an empty result.');
-    }
-
-    return {
-      pageCount: result.total,
-      text,
-      pages,
-    };
-  } finally {
-    await parser.destroy();
+  if (!normalizedText) {
+    throw new Error('PDF text extraction returned an empty result.');
   }
+
+  return {
+    pageCount: totalPages,
+    text: normalizedText,
+    pages: [
+      {
+        pageNumber: 1,
+        text: normalizedText,
+      },
+    ],
+  };
 }
 
 export async function extractTextFromPdfFile(file: File) {
