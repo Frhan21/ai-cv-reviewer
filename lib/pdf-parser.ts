@@ -1,21 +1,14 @@
-import { PDFParse } from "pdf-parse";
+import { ParsedPdfResult } from '@/types/pdf-parser';
+import { PDFParse } from 'pdf-parse';
 
-const DEFAULT_PAGE_JOINER = "\n\n--- Page {page_number} of {total_number} ---\n\n";
-
-export type ParsedPdfResult = {
-  pageCount: number;
-  text: string;
-  pages: Array<{
-    pageNumber: number;
-    text: string;
-  }>;
-};
+const DEFAULT_PAGE_JOINER =
+  '\n\n--- Page {page_number} of {total_number} ---\n\n';
 
 function normalizeExtractedText(text: string) {
   return text
-    .replace(/\r\n/g, "\n")
-    .replace(/\u0000/g, "")
-    .replace(/\n{3,}/g, "\n\n")
+    .replace(/\r\n/g, '\n')
+    .replace(/\u0000/g, '')
+    .replace(/\n{3,}/g, '\n\n')
     .trim();
 }
 
@@ -26,7 +19,7 @@ export async function extractTextFromPdfBuffer(
 
   try {
     const result = await parser.getText({
-      cellSeparator: " | ",
+      cellSeparator: ' | ',
       lineEnforce: true,
       pageJoiner: DEFAULT_PAGE_JOINER,
       parseHyperlinks: true,
@@ -40,7 +33,7 @@ export async function extractTextFromPdfBuffer(
     const text = normalizeExtractedText(result.text);
 
     if (!text) {
-      throw new Error("PDF text extraction returned an empty result.");
+      throw new Error('PDF text extraction returned an empty result.');
     }
 
     return {
@@ -62,7 +55,6 @@ export async function extractTextFromPdfFile(file: File) {
 
 export function isPdfFile(file: File) {
   return (
-    file.type === "application/pdf" ||
-    file.name.toLowerCase().endsWith(".pdf")
+    file.type === 'application/pdf' || file.name.toLowerCase().endsWith('.pdf')
   );
 }

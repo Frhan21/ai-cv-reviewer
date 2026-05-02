@@ -1,23 +1,17 @@
-import { ChatGroq } from "@langchain/groq";
+import { CreateGroqClientOptions } from '@/types/groq';
+import { ChatGroq } from '@langchain/groq';
 
-export const GROQ_DEFAULT_MODEL = "llama-3.3-70b-versatile";
+export const GROQ_DEFAULT_MODEL = 'llama-3.3-70b-versatile';
 
 function getGroqApiKey() {
   const apiKey = process.env.GROQ_API_KEY;
 
   if (!apiKey) {
-    throw new Error("Missing GROQ_API_KEY environment variable.");
+    throw new Error('Missing GROQ_API_KEY environment variable.');
   }
 
   return apiKey;
 }
-
-type CreateGroqClientOptions = {
-  model?: string;
-  temperature?: number;
-  maxTokens?: number;
-  timeout?: number;
-};
 
 export function createGroqClient(options: CreateGroqClientOptions = {}) {
   return new ChatGroq({
