@@ -35,15 +35,19 @@ export function AnalyzeForm() {
 
   return (
     <>
-      <div className="bg-white rounded-3xl shadow-xl overflow-hidden border border-input">
-        <div className="flex flex-col md:flex-row">
-          {/* Left Col: Info */}
-          <div className="md:w-1/3 bg-primary p-8 text-primary-foreground flex flex-col justify-between">
+      <div className="bg-white overflow-hidden border border-input rounded-sm">
+        <div className="flex flex-col md:flex-row min-h-[720px]">
+          <div className="md:w-[38%] bg-[#0b1c30] p-8 md:p-12 text-white flex flex-col justify-between">
             <div>
-              <h2 className="text-2xl font-bold mb-4">Analyze Your CV.</h2>
-              <p className="text-primary-foreground/80 text-sm leading-relaxed mb-8">
-                Get valuable insights to optimize your CV, pass ATS systems, and
-                catch the recruiter&apos;s eye.
+              <p className="text-[#9fb8e8] font-semibold mb-6">
+                Application review
+              </p>
+              <h1 className="text-4xl md:text-6xl leading-[0.96] tracking-[-0.04em] font-bold mb-6">
+                Test the CV against the role.
+              </h1>
+              <p className="text-[#b9c7da] leading-relaxed mb-8">
+                Give HireLens the document and the hiring context. You will get
+                the score, the gaps, and the edits to prioritize.
               </p>
 
               <div className="space-y-6 mt-8">
@@ -80,7 +84,7 @@ export function AnalyzeForm() {
                 <div
                   onDragOver={(e) => e.preventDefault()}
                   onDrop={handleDrop}
-                  className={`relative border-2 border-dashed rounded-2xl p-10 text-center transition-all ${file ? 'border-primary bg-primary/5' : 'border-border hover:border-primary hover:bg-muted/50'}`}
+                  className={`relative border-2 border-dashed rounded-sm p-10 text-center transition-all ${file ? 'border-primary bg-primary/5' : 'border-border hover:border-primary hover:bg-muted/50'}`}
                 >
                   <input
                     type="file"

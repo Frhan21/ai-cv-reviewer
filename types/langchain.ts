@@ -8,6 +8,12 @@ export const cvReviewInputSchema = z.object({
   seniority: z.string().trim().min(2).max(50).optional(),
 });
 
+const rewrittenBulletSchema = z.object({
+  original: z.string(),
+  improved: z.string(),
+  reason: z.string(),
+});
+
 export const cvReviewSchema = z.object({
   summary: z.string(),
   overallScore: z.number().min(0).max(100),
@@ -20,19 +26,21 @@ export const cvReviewSchema = z.object({
   }),
   sectionFeedback: z.array(
     z.object({
-      section: z.string(),
+      section: z
+        .string()
+        .trim()
+        .min(1)
+        .describe(
+          'Required: the CV section being reviewed, such as Summary, Skills, Experience, Projects, or Education. Never omit this field.',
+        ),
       score: z.number().min(0).max(100),
       issues: z.array(z.string()),
       suggestions: z.array(z.string()),
     }),
   ),
-  rewrittenBullets: z.array(
-    z.object({
-      original: z.string(),
-      improved: z.string(),
-      reason: z.string(),
-    }),
-  ),
+  rewrittenBullets: z
+    .union([z.array(rewrittenBulletSchema), rewrittenBulletSchema])
+    .transform((value) => (Array.isArray(value) ? value : [value])),
   finalVerdict: z.string(),
 });
 

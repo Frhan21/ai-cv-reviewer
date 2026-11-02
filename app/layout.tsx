@@ -1,25 +1,28 @@
-import { cn } from "@/lib/utils";
-import type { Metadata } from "next";
-import { Geist, Geist_Mono, Inter } from "next/font/google";
-import "./globals.css";
+import { cn } from '@/lib/utils';
+import type { Metadata } from 'next';
+import { Geist, Geist_Mono, Inter } from 'next/font/google';
+import './globals.css';
+import './landing.css';
+import './story.css';
 
 const inter = Inter({ subsets: ['latin'], variable: '--font-sans' });
 
 const geistSans = Geist({
-  variable: "--font-geist-sans",
-  subsets: ["latin"],
+  variable: '--font-geist-sans',
+  subsets: ['latin'],
 });
 
 const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
-  subsets: ["latin"],
+  variable: '--font-geist-mono',
+  subsets: ['latin'],
 });
 
 export const metadata: Metadata = {
-  title: "HireLens AI - AI Resume Reviewer",
-  description: "Review your CV with Artificial Intelligence, get ATS scores, and instant actionable feedback.",
+  title: 'HireLens AI - AI Resume Reviewer',
+  description:
+    'Review your CV with Artificial Intelligence, get ATS scores, and instant actionable feedback.',
   icons: {
-    icon: "/logo-removebg-preview.png",
+    icon: '/logo-removebg-preview.png',
   },
 };
 
@@ -31,7 +34,15 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={cn("h-full", "antialiased", geistSans.variable, geistMono.variable, "font-sans", inter.variable)}
+      data-scroll-behavior="smooth"
+      className={cn(
+        'h-full',
+        'antialiased',
+        geistSans.variable,
+        geistMono.variable,
+        'font-sans',
+        inter.variable,
+      )}
     >
       <body className="min-h-full flex flex-col">{children}</body>
     </html>

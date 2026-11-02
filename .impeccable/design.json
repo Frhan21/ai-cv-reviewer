@@ -1,0 +1,24 @@
+{
+  "name": "HireLens Application Orbit",
+  "version": 1,
+  "tokens": {
+    "color": {
+      "paper": "#f8f9ff",
+      "field": "#e5eeff",
+      "navy": "#0b1c30",
+      "blue": "#0037b0",
+      "violet": "#712ae2",
+      "body": "#434655",
+      "border": "#c8d7f1"
+    },
+    "radius": {
+      "control": "4px",
+      "surface": "4px"
+    },
+    "motion": {
+      "easeOut": "cubic-bezier(0.16, 1, 0.3, 1)",
+      "fast": "200ms",
+      "entrance": "700ms"
+    }
+  }
+}

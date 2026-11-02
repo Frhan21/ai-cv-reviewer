@@ -1,0 +1,129 @@
+- generic [ref=f3e1]:
+  - main [ref=f3e2]:
+    - navigation "Primary navigation" [ref=f3e3]:
+      - link "HireLens AI home" [ref=f3e4] [cursor=pointer]:
+        - /url: /
+        - generic [ref=f3e5]: HireLens AI
+      - link "Review my CV" [ref=f3e9] [cursor=pointer]:
+        - /url: /analyze
+    - region [ref=f3e194]:
+      - generic [ref=f3e11]:
+        - heading "Your next CV. More clarity." [level=1] [ref=f3e195]: Your next CV.More clarity.
+        - paragraph [ref=f3e13]: A rejection tells you little. HireLens helps you find what to improve.
+        - generic [ref=f3e14]:
+          - link "Test my CV" [ref=f3e15] [cursor=pointer]:
+            - /url: /analyze
+          - link "Follow the application" [ref=f3e18] [cursor=pointer]:
+            - /url: "#application-journey"
+      - generic [ref=f3e20]:
+        - generic [ref=f3e22]:
+          - strong [ref=f3e23]: Make your next application clearer.
+          - paragraph [ref=f3e24]: Review your CV with HireLens. Find missing evidence and revise before sending again.
+          - link "Review my CV" [ref=f3e199] [cursor=pointer]:
+            - /url: /analyze
+        - generic "Illustrative application story" [ref=f3e25]:
+          - generic [ref=f3e26]:
+            - button "Create" [ref=f3e27] [cursor=pointer]
+            - button "Send" [ref=f3e28] [cursor=pointer]
+            - button "Wait" [ref=f3e29] [cursor=pointer]
+            - button "Reply" [ref=f3e30] [cursor=pointer]
+            - button "Improve" [active] [pressed] [ref=f3e31] [cursor=pointer]
+          - button "Replay story" [ref=f3e200] [cursor=pointer]
+        - generic [ref=f3e36]: An illustrative application, not a prediction of your result.
+    - region [ref=f3e37]:
+      - heading "A recruiter cannot fix what your CV leaves unclear." [level=2] [ref=f3e38]
+      - generic [ref=f3e39]:
+        - paragraph [ref=f3e40]:
+          - strong [ref=f3e41]: Six seconds
+          - generic [ref=f3e42]: A quick scan needs a clear role, credible dates, and visible outcomes.
+        - paragraph [ref=f3e43]:
+          - strong [ref=f3e44]: One vacancy
+          - generic [ref=f3e45]: The right keywords and evidence change with each job description.
+        - paragraph [ref=f3e46]:
+          - strong [ref=f3e47]: One chance
+          - generic [ref=f3e48]: Find rejection risks while you can still edit the document.
+    - region [ref=f3e49]:
+      - generic [ref=f3e50]:
+        - generic [ref=f3e51]:
+          - heading "Follow your CV to the hiring decision." [level=2] [ref=f3e52]
+          - generic [ref=f3e53]:
+            - generic [ref=f3e54]: 1 of 4
+            - heading "Your CV enters the application." [level=3] [ref=f3e55]
+            - paragraph [ref=f3e56]: HireLens reads the same document you plan to send. Layout, sections, dates, and wording stay attached to one application.
+        - generic [ref=f3e62]:
+          - generic [ref=f3e63]: Application · Product designer
+          - generic [aria-hidden] [ref=f3e66]:
+            - generic [ref=f3e67]: CV
+            - generic [ref=f3e74]: Job
+            - generic [ref=f3e78]: ATS
+            - generic [ref=f3e86]: Decision
+          - generic [ref=f3e89]:
+            - generic [ref=f3e90]:
+              - generic [ref=f3e91]: Maya Putri
+              - generic [ref=f3e92]: Product designer
+              - strong [ref=f3e95]: Experience
+              - strong [ref=f3e99]: Selected work
+            - generic [ref=f3e103]:
+              - text: Target opening
+              - strong [ref=f3e104]: Product Designer
+              - paragraph [ref=f3e105]: Research · systems · prototyping · outcomes
+            - generic [ref=f3e106]:
+              - generic [ref=f3e107]: Revise before sending
+              - strong [ref=f3e110]: 74 / 100
+              - paragraph [ref=f3e111]: Your experience fits. Two bullets lack outcomes and one required skill is missing from the evidence.
+              - list [ref=f3e112]:
+                - listitem [ref=f3e113]: Add the result of the checkout redesign
+                - listitem [ref=f3e116]: Show design-system ownership
+    - region [ref=f3e119]:
+      - generic [ref=f3e120]:
+        - heading "The edits move the application." [level=2] [ref=f3e121]
+        - paragraph [ref=f3e122]: Every warning points to the CV line that caused it. You decide which suggestion belongs in the final document.
+      - generic [ref=f3e123]:
+        - generic [ref=f3e124]:
+          - text: Application readiness
+          - strong [ref=f3e125]: "78"
+          - text: /100
+          - paragraph [ref=f3e126]: Strong match after three focused revisions.
+        - generic [ref=f3e127]:
+          - text: Highest-impact edit
+          - strong [ref=f3e128]: Add evidence to recent experience
+          - paragraph [ref=f3e129]: “Built payroll APIs” names the work. Add endpoint count, latency change, or the business process supported.
+        - generic [ref=f3e130]:
+          - generic [ref=f3e131]: Before
+          - paragraph [ref=f3e132]: Developed REST APIs for payroll operations.
+          - generic [ref=f3e135]: After
+          - paragraph [ref=f3e136]: Developed 10+ payroll APIs used across multi-country employee workflows.
+    - region [ref=f3e137]:
+      - generic [ref=f3e138]:
+        - heading "Send when the evidence is ready." [level=2] [ref=f3e139]
+        - paragraph [ref=f3e140]: HireLens does not promise an interview. It helps remove avoidable screening risks.
+      - generic [aria-hidden] [ref=f3e141]:
+        - generic [ref=f3e142]: CV
+        - generic [ref=f3e145]: Application submitted
+      - link "Review the next application" [ref=f3e150] [cursor=pointer]:
+        - /url: /analyze
+    - region [ref=f3e153]:
+      - generic [ref=f3e154]:
+        - heading "What job seekers reported." [level=2] [ref=f3e155]
+        - paragraph [ref=f3e156]: Examples carried from the current HireLens site.
+      - generic [ref=f3e157]:
+        - blockquote [ref=f3e158]:
+          - text: “Two weeks after optimizing, I had four interviews scheduled.”
+          - generic [ref=f3e159]: Sarah J.Senior PM
+        - blockquote [ref=f3e160]:
+          - text: “The recruiter view showed which parts of my background were invisible.”
+          - generic [ref=f3e161]: David T.Software Engineer
+        - blockquote [ref=f3e163]:
+          - text: “The skills gap gave me a practical path into data science.”
+          - generic [ref=f3e164]: Elena M.Data Scientist
+    - generic [ref=f3e166]:
+      - heading "Check the application before the company does." [level=2] [ref=f3e167]
+      - link "Upload my CV" [ref=f3e168] [cursor=pointer]:
+        - /url: /analyze
+      - paragraph [ref=f3e171]: Start with the PDF you already have.
+    - generic [ref=f3e174]:
+      - strong [ref=f3e175]: HireLens AI
+      - paragraph [ref=f3e176]: Role-specific CV review before you apply.
+      - generic [ref=f3e177]: © 2026 HireLens AI
+  - button "Open Next.js Dev Tools" [ref=f3e183] [cursor=pointer]
+  - alert [ref=f3e193]
